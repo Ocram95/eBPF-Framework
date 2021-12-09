@@ -173,7 +173,7 @@ With kernel versions > 5.10, there are at least 3 warnings about redefinition of
 
 [1] L. Caviglione, W. Mazurczyk, M. Repetto, A. Schaffhauser, M. Zuppelli. Kernel-level Tracing for Detecting Stegomalware and Covert Channels in Linux Environments, <i>Computer Networks</i>, Volume 191, May 2021. DOI: <A href="https://doi.org/10.1016/j.comnet.2021.108010">10.1016/j.comnet.2021.108010</A>.
 
-[2] L. Caviglione, M. Zuppelli, W. Mazurczyk, A. Shaffhauser, M. Repetto. Code Augmentation for Detecting Covert Channels Targeting the IPv6 Flow Label. 3rd International Workshop on Cyber-Security Threats, Trust and Privacy Management in Software-defined and Virtualized Infrastructures (SecSoft), July 2nd, 2021, Tokyo, Japan. DOI: OI: <A href="https://doi.org/10.1109/NetSoft51509.2021.9492661">10.1109/NetSoft51509.2021.9492661</A>. 
+[2] L. Caviglione, M. Zuppelli, W. Mazurczyk, A. Shaffhauser, M. Repetto. Code Augmentation for Detecting Covert Channels Targeting the IPv6 Flow Label. 3rd International Workshop on Cyber-Security Threats, Trust and Privacy Management in Software-defined and Virtualized Infrastructures (SecSoft), July 2nd, 2021, Tokyo, Japan. DOI: <A href="https://doi.org/10.1109/NetSoft51509.2021.9492661">10.1109/NetSoft51509.2021.9492661</A>. 
 
 ## Acknowledgements
 
