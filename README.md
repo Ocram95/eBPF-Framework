@@ -176,9 +176,11 @@ With kernel versions > 5.10, there are at least 3 warnings about redefinition of
 
 [2] L. Caviglione, M. Zuppelli, W. Mazurczyk, A. Shaffhauser, M. Repetto. Code Augmentation for Detecting Covert Channels Targeting the IPv6 Flow Label. 3rd International Workshop on Cyber-Security Threats, Trust and Privacy Management in Software-defined and Virtualized Infrastructures (SecSoft), July 2nd, 2021, Tokyo, Japan. DOI: <A href="https://doi.org/10.1109/NetSoft51509.2021.9492661">10.1109/NetSoft51509.2021.9492661</A>. 
 
+[3] M. Repetto, L. Caviglione, M. Zuppelli, “bccstego: A Framework for Investigating Network Covert Channels”, in Proceedings of the 5th International Workshop on Criminal Use of Information Hiding (CUING), in conjunction with the 16th International Conference on Availability, Reliability and Security (ARES), online, pp. 1-7, 2021. DOI: <A href="https://doi.org/10.1145/3465481.3470028">10.1145/3465481.3470028</A>.
+
 ## Tools
 [3] [BCCSIMARGLToolkit](https://github.com/Ocram95/BCCSIMARGLToolkit): a set of tools that can process data from the eBPF-Framework.
 
 ## Acknowledgements
-
+This software is a part of [bccstego](https://github.com/mattereppe/bccstego) tool.
 This work has received funding from the European Commission under Grant Agreement no. 786922 (<A href="https://www.astrid-project.eu/">ASTRID</A>), Grant Agreement no. 833456 (<A href="https://guard-project.eu/">GUARD</A>) and Grant Agreement no. 833042 (<A href="https://simargl.eu/">SIMARGL</A>).
