@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-# 
-# flowlabel BPF programs to analyse flow label 
-#           statistics in IPv6 header. Conceived
-#           to detect steganographic channels.
-#
 # Copyright (C) 2020 Matteo Repetto.
 # Licensed under the GNU Public License v2.0.
 #
 
 from bcc import BPF
 from pyroute2 import IPRoute
-from pyroute2.netlink.exceptions import NetlinkError
+#from pyroute2.netlink.exceptions import NetlinkError
+from pr2modules.netlink.exceptions import NetlinkError
 import time
 import sys
 import subprocess
