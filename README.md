@@ -1,13 +1,14 @@
-# bccstego
+# eBPF-Framework
 
-This tool inspects IP packets and creates an histogram of seen values used for a specific header field. Version 0.1 only supported IPv6, version 0.2 added support for IPv4, and finally version 0.3 extended to L4 headers as well. According, the name of the main executable is now <code>ipstats.py</code>. The list of supported fields includes those that can be likely used for creating covert channels, and currently includes both IPv6 (flow label, traffic class, hop limit), IPv4 (type of service/differentiated service code pointer, identification, time-to-live, fragment offset, internet header length), TCP (ack, reserved bits, timestamp), and UDP (checksum). 
+This tool inspects IP packets and creates an histogram of seen values used for a specific header field. It supports IPv4/v6 and L4 headers. According, the name of the main executable is now <code>ipstats.py</code>. The list of supported fields includes those that can be likely used for creating covert channels, and currently includes both IPv6 (flow label, traffic class, hop limit), IPv4 (type of service/differentiated service code pointer, identification, time-to-live, fragment offset, internet header length), TCP (ack, reserved bits, timestamp), and UDP (checksum). 
 
 
 The histogram is made of a given number of bins, and all possible field values are equally divided into the available bins, in a consecutive way. Practically speaking, the field values grouped into the same bin share the same prefix, which is also used as the <i>key</i> in the output (the number of shared bits depends on the number of bins). 
 The number of bins and the sampling interval can be both set on the command line; however, the former must be lower than the number of possible values for the specific field.
 Beware that the larger is the number of bins, the higher will be internal memory usage; of course, also the delay to retrieve the whole histogram will increase. Currently, it seems that no errors are reported up to 2^20 bins (tested on Debian virtual machine with 2GB vRAM).
 
-The tool can be used to check how the kernel generates these values, and to detect covert channels hidden in the IP headers [1][2]. A collection of tools for creating covert channels in different header fields of IPv6 can be retrieved from [3].
+The tool can be used to check how the kernel generates these values, and to detect covert channels hidden in the IP headers [1][2].
+The obtained histograms can be used, for example, to detect malicious communications via heatmaps (see [3]).
 
 ## Usage
 
@@ -174,6 +175,9 @@ With kernel versions > 5.10, there are at least 3 warnings about redefinition of
 [1] L. Caviglione, W. Mazurczyk, M. Repetto, A. Schaffhauser, M. Zuppelli. Kernel-level Tracing for Detecting Stegomalware and Covert Channels in Linux Environments, <i>Computer Networks</i>, Volume 191, May 2021. DOI: <A href="https://doi.org/10.1016/j.comnet.2021.108010">10.1016/j.comnet.2021.108010</A>.
 
 [2] L. Caviglione, M. Zuppelli, W. Mazurczyk, A. Shaffhauser, M. Repetto. Code Augmentation for Detecting Covert Channels Targeting the IPv6 Flow Label. 3rd International Workshop on Cyber-Security Threats, Trust and Privacy Management in Software-defined and Virtualized Infrastructures (SecSoft), July 2nd, 2021, Tokyo, Japan. DOI: <A href="https://doi.org/10.1109/NetSoft51509.2021.9492661">10.1109/NetSoft51509.2021.9492661</A>. 
+
+## Tools
+[3] [BCCSIMARGLToolkit](https://github.com/Ocram95/BCCSIMARGLToolkit): a set of tools that can process data from the eBPF-Framework.
 
 ## Acknowledgements
 
