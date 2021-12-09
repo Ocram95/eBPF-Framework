@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 
+# Copyright (C) 2020 Matteo Repetto.
 # Licensed under the GNU Public License v2.0.
 #
 
