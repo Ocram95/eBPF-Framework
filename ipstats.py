@@ -13,6 +13,7 @@ import subprocess
 import argparse
 import pathlib
 import re
+import csv
 
 class InvalidParameterError(Exception):
     """Exception raised for invalid parameters in the input
@@ -754,15 +755,22 @@ try:
         now = time.time()
         # -- TODO: Put the following in a function 
         num = len(hist_values)
-        print("Bin value\tNo packets\tTotal\tInterval\n")
-        for i in range(0,num):
-            #print(len(hist_values[i])) # This is a num X 2 bi-dimensional array
-            #print(type(hist_values[i])) # <class 'tuple'>
-            period = now - prev
-            packets = int((hist_values[i][1]).value) - int((prev_values[i][1]).value)
-            print("{0:05x}".format(i),"\t\t", packets, "\t\t", (hist_values[i][1]).value, "\t[",period, "s]")
-        # -- End function
-        print('\n')
+        # print("Bin value\tNo packets\tTotal\tInterval\n")
+        # for i in range(0,num):
+        #     #print(len(hist_values[i])) # This is a num X 2 bi-dimensional array
+        #     #print(type(hist_values[i])) # <class 'tuple'>
+        #     period = now - prev
+        #     packets = int((hist_values[i][1]).value) - int((prev_values[i][1]).value)
+        #     print("{0:05x}".format(i),"\t\t", packets, "\t\t", (hist_values[i][1]).value, "\t[",period, "s]")
+        # # -- End function
+        # print('\n')
+        bins_values = []
+        for x in range(len(hist_values)):
+        	bins_values.append(int(hist_values[x][1].value))
+        bins_values.insert(0, now - prev)
+        with open(output_file_name, mode='a') as file_to_write:
+        	writer = csv.writer(file_to_write, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        	writer.writerow(bins_values)
 except KeyboardInterrupt:
     sys.stdout.close()
     pass
