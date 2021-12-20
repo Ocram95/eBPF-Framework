@@ -22,8 +22,6 @@ The in-line help provides a short summary of all main options.
 usage: ipstats.py [-h] -t PROG -d DEV [-b BINBASE] [-i INT] [-w FILE] [--dir {ingress,egress}]
                   [-p]
 
-Run bpf inspectors on IPv6 header.
-
 optional arguments:
   -h, --help            show this help message and exit
   -t PROG, --type PROG  Type of statistics to collect. Allowed values for IPv6: fl (flow label),
@@ -118,7 +116,7 @@ Run the script on ingress packets on <code>eth1>/code>, monitor the values of th
   
  
 ```Shell
-% sudo ./ip6hstats.py -d eth1 -b 8 -t fl --dir ingress -w hist.csv
+% sudo ./ipstats.py -d eth1 -b 8 -t fl --dir ingress -w hist.csv
 ```
 And the content of the <code>hist.csv</code> looks like the following (snippet):
 
@@ -179,7 +177,7 @@ With kernel versions > 5.10, there are at least 3 warnings about redefinition of
 [3] M. Repetto, L. Caviglione, M. Zuppelli, “bccstego: A Framework for Investigating Network Covert Channels”, in Proceedings of the 5th International Workshop on Criminal Use of Information Hiding (CUING), in conjunction with the 16th International Conference on Availability, Reliability and Security (ARES), online, pp. 1-7, 2021. DOI: <A href="https://doi.org/10.1145/3465481.3470028">10.1145/3465481.3470028</A>.
 
 ## Tools
-[3] [BCCSIMARGLToolkit](https://github.com/Ocram95/BCCSIMARGLToolkit): a set of tools that can process data from the eBPF-Framework.
+[4] [BCCSIMARGLToolkit](https://github.com/Ocram95/BCCSIMARGLToolkit): a set of tools that can process data from the eBPF-Framework.
 
 ## Acknowledgements
 This software is a part of [bccstego](https://github.com/mattereppe/bccstego) tool.
